@@ -78,24 +78,25 @@ function Cart() {
                     <h3>${appContext.cart.total.toFixed(2)}</h3>
                   </Badge>
                   
+                    
                       <Link href="/checkout">
                         <Button style={{ width: "100%" }} color="primary">
                           <a>Order</a>
                         </Button>
                       </Link>
-                    </div>
-               
-               
+             
+                  
+                </div>
               ) : (
                 <>
-                  {router.pathname === "/checkout" && (
+                  
                     <small
                       style={{ color: "blue" }}
                       onClick={() => window.history.back()}
                     >
                       back to restaurant
                     </small>
-                  )}
+                  
                 </>
               )
             ) : (
@@ -103,7 +104,6 @@ function Cart() {
             )}
           </div>
           {console.log(router.pathname)}
-          {console.log(isAuthenticated)}
         </CardBody>
       </Card>
       <style jsx>{`

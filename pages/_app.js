@@ -27,13 +27,13 @@ export default class MyApp extends App {
 
   componentDidMount() {
     const token = Cookie.get("token");
-    // restore cart from cookie, this could also be tracked in a db
+  // restore cart from cookie, this could also be tracked in a db
     const cart = Cookie.get("cart");
     //if items in cart, set items and total from cookie
-    console.log(cart);
+  //  console.log(cart);
 
     if (typeof cart === "string" && cart !== "undefined") {
-      console.log("foyd");
+  //    console.log("foyd");
       JSON.parse(cart).forEach((item) => {
         this.setState({
           cart: { items: JSON.parse(cart), total: item.price * item.quantity },
@@ -58,7 +58,7 @@ export default class MyApp extends App {
         this.setUser(user);
       });
     }
-  }
+ }
 
   setUser = (user) => {
     this.setState({ user });
