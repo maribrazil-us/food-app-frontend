@@ -56,7 +56,7 @@ const IndexPage = ({
           {signInButtonNode()}
         </div>
         <div className="text">
-          You aren't authorized to view this page
+          You are not authorized to view this page
         </div>
       </div>
     )
