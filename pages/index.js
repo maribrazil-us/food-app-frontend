@@ -9,8 +9,9 @@ import RestaurantList from "../components/restaurantList";
 import React from 'react';
 import { useState } from 'react';
 import { InputGroup,Input, Button} from "reactstrap";
+import cors from 'cors';
 
-
+app.use(cors());
 
 export default function Home({restaurants}) {
   const [query, setQuery] = useState("");
