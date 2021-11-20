@@ -79,7 +79,7 @@ function Login(props) {
 
                   <FormGroup>
                     <span>
-                      <a href="">
+                      <a href="" >
                         <small>Forgot Password?</small>
                       </a>
                     </span>
