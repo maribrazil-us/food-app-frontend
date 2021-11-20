@@ -66,7 +66,7 @@ export default function RestaurantList(props) {
                 <div className="card-footer">
                   <Link
                     as={`/restaurants/${res.id}`}
-                    href={`/restaurants?id=${res.id}`}
+                    href={`/restaurants/[dishes]?id=${res.id}`}
                   >
                     <a className="btn btn-primary">View</a>
                   </Link>
