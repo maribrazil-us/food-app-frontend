@@ -1,4 +1,4 @@
-import { getSession, signIn, signOut } from "next-auth/client";
+ /*import { getSession, signIn, signOut } from "next-auth/client";
 import Head from 'next/head';
 import Link from "next/link";
 import React from "react";
@@ -87,4 +87,4 @@ export const getServerSideProps = async ({ req }) => {
   };
 };
 
-export default IndexPage;
+export default IndexPage;*/

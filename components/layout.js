@@ -41,7 +41,7 @@ const Layout = (props) => {
         </style>
         <Nav className="navbar navbar-dark bg-dark">
           <NavItem>
-            <Link href="/">
+            <Link href="/" passHref>
               <a className="navbar-brand">Home</a>
             </Link>
           </NavItem>
@@ -50,14 +50,14 @@ const Layout = (props) => {
             {user ? (
               <h5>{user.username}</h5>
             ) : (
-              <Link href="/register">
+              <Link href="/register" passHref>
                 <a className="nav-link"> Sign up</a>
               </Link>
             )}
           </NavItem>
           <NavItem>
             {user ? (
-              <Link href="/">
+              <Link href="/" passHref>
                 <a
                   className="nav-link"
                   onClick={() => {
@@ -69,7 +69,7 @@ const Layout = (props) => {
                 </a>
               </Link>
             ) : (
-              <Link href="/login">
+              <Link href="/login" passHref>
                 <a className="nav-link">Sign in</a>
               </Link>
             )}

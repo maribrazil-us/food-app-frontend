@@ -104,7 +104,7 @@ function Login(props) {
                     </Button>
                     
                     <Button onClick={(e) => {
-                              window.location = 'http://localhost:1337/connect/google';
+                             // window.location = 'http://localhost:1337/connect/google';
                              
                               }}>
                       Signin with Google

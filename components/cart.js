@@ -8,7 +8,7 @@ import Link from "next/link"
 
 function Cart() {
   const appContext = useContext(AppContext);
-  const router = useRouter();
+ 
 
   const { cart, isAuthenticated } = appContext;
 
@@ -103,7 +103,7 @@ function Cart() {
               <h5>Login to Order</h5>
             )}
           </div>
-          {console.log(router.pathname)}
+          
         </CardBody>
       </Card>
       <style jsx>{`
