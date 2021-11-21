@@ -13,7 +13,7 @@ import { Router, Link, Route, Switch } from 'next/router';
 
 
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337";
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 console.log(`URL: ${API_URL}`);
 const link = new HttpLink({ uri: `${API_URL}/graphql`});
 const cache = new InMemoryCache();
