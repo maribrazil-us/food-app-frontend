@@ -4,7 +4,8 @@ import { useEffect } from "react";
 import Router from "next/router";
 import Cookie from "js-cookie";
 import axios from "axios";
-
+import router from "next/router";
+import { useLocation } from "react-router";
 
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337";
@@ -46,7 +47,7 @@ export const login = (identifier, password) => {
       .then((res) => {
         //set token response from Strapi for server validation
         Cookie.set("token", res.data.jwt);
-
+        console.log("token login", res.data.jwt)
         //resolve the promise to set loading to false in SignUp form
         resolve(res);
         //redirect back to home page for restaurance selection
@@ -97,3 +98,6 @@ export const withAuthSync = (Component) => {
 
   return Wrapper;
 };
+
+
+

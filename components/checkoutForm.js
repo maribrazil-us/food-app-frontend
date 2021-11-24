@@ -54,7 +54,7 @@ function CheckoutForm() {
     });
 
     if (response.ok) {
-      alert('Success');
+      alert('Success! Your order was received.');
       window.location.replace('/');
     } else {
       setError(response.statusText);

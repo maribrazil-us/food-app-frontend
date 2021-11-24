@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import RestaurantList from "../../components/restaurantList";
 import AppContext from "../../components/context";
 import Cart from "../../components/cart";
-
+import { useState } from "react";
 import {
   Button,
   Card,
@@ -13,6 +13,8 @@ import {
   CardTitle,
   Col,
   Row,
+  InputGroup,
+  Input
 } from "reactstrap";
 import { useContext } from "react";
 
@@ -35,6 +37,7 @@ const GET_RESTAURANT_DISHES = gql`
 `;
 
 const RestaurantDishes = () => {
+  const [query, setQuery] = useState("");
   const appContext = useContext(AppContext);
   const router = useRouter();
   const { data, loading, error } = useQuery(GET_RESTAURANT_DISHES, {
@@ -42,16 +45,30 @@ const RestaurantDishes = () => {
   });
 
   if (error) return "Error Loading dishes";
-
   if (loading) return <h1>Loading ...</h1>;
-
   if (data) {
     const { restaurant } = data;
 
     return (
+     
       <>
-        <h1>{restaurant.name}</h1>
 
+      <h1>{restaurant.name}</h1>
+
+      <div className="search">
+      <InputGroup>
+          <Button>Search</Button>
+        <Input
+          onChange={(e) => setQuery(e.target.value)}
+          type="string"
+          value={query}
+          placeholder="Find Dishes"
+        />
+       </InputGroup>
+
+      </div>
+      <br/>
+      <br/>
         <Row>
           {restaurant.dishes.map((res) => (
             <Col xs="6" sm="4" style={{ padding: 0 }} key={res.id}>
@@ -62,10 +79,10 @@ const RestaurantDishes = () => {
                       top={true}
                       style={{ height: 250 }}
                       src={
-                    process.env.NODE_ENV === "production"
+                      process.env.NODE_ENV === "production"
                       ? res.image.url
                       : `${process.env.NEXT_PUBLIC_API_URL}${res.image.url}`
-                  }
+                      }
                     />
                   
                 <CardBody>

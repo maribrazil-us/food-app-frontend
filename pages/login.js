@@ -12,7 +12,7 @@ import {
   Label,
   Input,
 } from "reactstrap";
-import { login } from "../components/auth";
+import { googlelogin, login } from "../components/auth";
 import AppContext from "../components/context";
 import Link from "next/link";
 
@@ -23,6 +23,7 @@ function Login(props) {
   const [error, setError] = useState(false);
   const router = useRouter();
   const appContext = useContext(AppContext);
+
   
   useEffect(() => {
     if (appContext.isAuthenticated) {
@@ -102,10 +103,13 @@ function Login(props) {
                     >
                       {loading ? "Loading... " : "Submit"}
                     </Button>
-                    
-                    <Button onClick={(e) => {
-                             // window.location = 'http://localhost:1337/connect/google';
-                             
+                    <br/>
+                    <br/>
+                    <br/>
+                    <Button 
+                      style={{ float: "unset", width: 300 }}
+                      onClick={(e) => {
+                                window.location = 'http://localhost:1337/connect/google';
                               }}>
                       Signin with Google
                     </Button>

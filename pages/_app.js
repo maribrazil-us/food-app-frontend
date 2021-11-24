@@ -10,6 +10,7 @@ import { ApolloProvider, HttpLink, InMemoryCache, ApolloClient } from "@apollo/c
 import React, { Component } from "react";
 import App from "next/app";
 import { Router, Link, Route, Switch } from 'next/router';
+import { useLocation } from 'react-router';
 
 
 
